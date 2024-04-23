@@ -1,7 +1,7 @@
 cargo xtask
 ==============
 
-cargo-xtask is way to add free-form automation to a Rust project, a-la make, npm run or bespoke bash scripts.
+[cargo-xtask](https://github.com/matklad/cargo-xtask) is way to add free-form automation to a Rust project, a-la make, npm run or bespoke bash scripts.
 The two distinguishing features of xtask are:
 
 - It doesn't require any other binaries besides cargo and rustc, it fully bootstraps from them
@@ -9,7 +9,12 @@ The two distinguishing features of xtask are:
 
 # Standard tasks
 
-* `--help`: list all available tasks, and format is `name - description`
+* `--help`: list all available tasks, and output as following:
+
+```
+Tasks:
+  dist - builds application and man pages
+```
 
 # Tooling
 
