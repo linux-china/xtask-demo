@@ -27,5 +27,5 @@ Tasks:
 # References
 
 * cargo xtask: https://github.com/matklad/cargo-xtask
-* Running Rust Tasks With “xtask” and “xtaskops”: https://betterprogramming.pub/running-rust-tasks-with-xtask-and-xtaskops-a2193e67dc25
+* Running Rust Tasks With "xtask" and "xtaskops": https://betterprogramming.pub/running-rust-tasks-with-xtask-and-xtaskops-a2193e67dc25
 * Cargo Configuration: https://doc.rust-lang.org/cargo/reference/config.html
