@@ -26,11 +26,9 @@ fn try_main() -> Result<(), DynError> {
 }
 
 fn print_help() {
-    eprintln!(
-        "Tasks:
-
-dist - builds application and man pages
-"
+    eprintln!("{}", r#"Tasks:
+  dist - builds application and man pages
+"#.trim()
     )
 }
 
