@@ -7,6 +7,10 @@ The two distinguishing features of xtask are:
 - It doesn't require any other binaries besides cargo and rustc, it fully bootstraps from them
 - Unlike bash, it can more easily be cross-platform, as it doesn't use the shell.
 
+# Standard tasks
+
+* `--help`: list all available tasks, and format is `name - description`
+
 # Tooling
 
 - [devx](https://github.com/elastio/devx): collection of useful utilities (spawning processes, git pre-commit hooks, etc.)
