@@ -13,6 +13,7 @@ The two distinguishing features of xtask are:
 
 ```
 Tasks:
+  hello - hello task
   dist - builds application and man pages
 ```
 
