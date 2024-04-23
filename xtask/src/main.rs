@@ -20,8 +20,8 @@ fn main() {
 fn try_main() -> Result<(), DynError> {
     let task = env::args().nth(1);
     match task.as_deref() {
-        Some("dist") => dist()?,
-        Some("hello") => hello(),
+        Some("dist") => dist_task()?,
+        Some("hello") => hello_task(),
         Some("--help") => print_help(),
         _ => print_help(),
     }
@@ -36,11 +36,11 @@ fn print_help() {
     )
 }
 
-fn hello() {
-    println!("Hello, world!");
+fn hello_task() {
+    println!("Hello, task!");
 }
 
-fn dist() -> Result<(), DynError> {
+fn dist_task() -> Result<(), DynError> {
     let _ = fs::remove_dir_all(&dist_dir());
     fs::create_dir_all(&dist_dir())?;
 
