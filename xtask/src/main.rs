@@ -19,6 +19,7 @@ fn try_main() -> Result<(), DynError> {
     let task = env::args().nth(1);
     match task.as_deref() {
         Some("dist") => dist()?,
+        Some("hello") => hello(),
         Some("--help") => print_help(),
         _ => print_help(),
     }
@@ -26,10 +27,15 @@ fn try_main() -> Result<(), DynError> {
 }
 
 fn print_help() {
-    eprintln!("{}", r#"Tasks:
+    println!("{}", r#"Tasks:
+  hello - hello task
   dist - builds application and man pages
 "#.trim()
     )
+}
+
+fn hello() {
+    println!("Hello, world!");
 }
 
 fn dist() -> Result<(), DynError> {
