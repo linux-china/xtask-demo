@@ -9,7 +9,7 @@ The two distinguishing features of xtask are:
 
 # Standard tasks
 
-* `--help`: list all available tasks, and output as following:
+* `cargo xtask --help`: list all available tasks, and output as following:
 
 ```
 Tasks:
