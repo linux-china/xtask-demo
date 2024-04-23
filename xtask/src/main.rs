@@ -29,7 +29,7 @@ fn print_help() {
     eprintln!(
         "Tasks:
 
-dist            builds application and man pages
+dist - builds application and man pages
 "
     )
 }
