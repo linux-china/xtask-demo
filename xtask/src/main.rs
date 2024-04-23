@@ -1,10 +1,12 @@
 use std::{
     env, fs,
     path::{Path, PathBuf},
-    process::{Command, Stdio},
+    process::{Command},
 };
 
 use man::prelude::*;
+
+const APP_NAME: &'static str = "xtask-demo";
 
 type DynError = Box<dyn std::error::Error>;
 
@@ -58,34 +60,16 @@ fn dist_binary() -> Result<(), DynError> {
     if !status.success() {
         Err("cargo build failed")?;
     }
-
-    let dst = project_root().join("target/release/hello-world");
-
-    fs::copy(&dst, dist_dir().join("hello-world"))?;
-
-    if Command::new("strip")
-        .arg("--version")
-        .stdout(Stdio::null())
-        .status()
-        .is_ok()
-    {
-        eprintln!("stripping the binary");
-        let status = Command::new("strip").arg(&dst).status()?;
-        if !status.success() {
-            Err("strip failed")?;
-        }
-    } else {
-        eprintln!("no `strip` utility found")
-    }
-
+    let dst = project_root().join(format!("target/release/{}", APP_NAME));
+    fs::copy(&dst, dist_dir().join(APP_NAME))?;
     Ok(())
 }
 
 fn dist_manpage() -> Result<(), DynError> {
-    let page = Manual::new("hello-world")
+    let page = Manual::new(APP_NAME)
         .about("Greets the world")
         .render();
-    fs::write(dist_dir().join("hello-world.man"), &page.to_string())?;
+    fs::write(dist_dir().join(format!("{}.man", APP_NAME)), &page.to_string())?;
     Ok(())
 }
 
